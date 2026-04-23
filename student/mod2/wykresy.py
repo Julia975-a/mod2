@@ -7,25 +7,32 @@ df['date'] = pd.to_datetime(df['date'])
 
 sns.set(style="whitegrid")
 
-# 1. Zużycie energii – wybrany tydzień
-week = df[(df['date'] >= '2016-01-10') & (df['date'] < '2016-01-17')]
+# 1. Średnie dzienne zużycie energii (czytelne)
+df_daily = df.resample('D', on='date').mean()
 
 plt.figure(figsize=(12,5))
-plt.plot(week['date'], week['Appliances'])
-plt.title("Zużycie energii – wybrany tydzień")
+plt.plot(df_daily.index, df_daily['Appliances'])
+plt.title("Średnie dzienne zużycie energii")
 plt.xlabel("Data")
 plt.ylabel("Wh")
-plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig("wykres1.png")
 plt.close()
 
-# 2. Korelacja (heatmapa)
-corr = df[['Appliances','T1','T2','T_out','RH_1','RH_2']].corr()
+# 2. Zużycie energii – tylko czwartki
+df['weekday'] = df['date'].dt.day_name()
+df['hour'] = df['date'].dt.hour
 
-plt.figure(figsize=(8,6))
-sns.heatmap(corr, annot=True, cmap='coolwarm')
-plt.title("Korelacja zmiennych")
+thursday = df[df['weekday'] == 'Thursday']
+
+hourly_thu = thursday.groupby('hour')['Appliances'].mean()
+
+plt.figure(figsize=(10,5))
+hourly_thu.plot(kind='line', marker='o')
+plt.title("Średnie zużycie energii w czwartki (wg godziny)")
+plt.xlabel("Godzina")
+plt.ylabel("Wh")
+plt.grid(True)
 plt.tight_layout()
 plt.savefig("wykres2.png")
 plt.close()
