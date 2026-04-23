@@ -7,32 +7,51 @@ df['date'] = pd.to_datetime(df['date'])
 
 sns.set(style="whitegrid")
 
-# 1. Średnie dzienne zużycie energii (czytelne)
-df_daily = df.resample('D', on='date').mean()
+# 1. Średnie zużycie energii wg dnia tygodnia
 
-plt.figure(figsize=(12,5))
-plt.plot(df_daily.index, df_daily['Appliances'])
-plt.title("Średnie dzienne zużycie energii")
-plt.xlabel("Data")
-plt.ylabel("Wh")
+df['weekday_name'] = df['date'].dt.day_name()
+
+order = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+
+weekday_avg = df.groupby('weekday_name')['Appliances'].mean().reindex(order)
+
+plt.figure(figsize=(10,5))
+weekday_avg.plot(kind='bar')
+
+plt.title("Średnie zużycie energii wg dnia tygodnia")
+plt.xlabel("Dzień tygodnia")
+plt.ylabel("Średnie Wh")
+plt.xticks(rotation=45)
+
 plt.tight_layout()
 plt.savefig("wykres1.png")
 plt.close()
 
-# 2. Zużycie energii – tylko czwartki
-df['weekday'] = df['date'].dt.day_name()
+# 2. Porównanie: czwartki vs weekend (średnie godzinowe)
+
+df['weekday'] = df['date'].dt.dayofweek  # 0=pon, 6=niedz
 df['hour'] = df['date'].dt.hour
 
-thursday = df[df['weekday'] == 'Thursday']
+# Czwartki (3)
+thu = df[df['weekday'] == 3]
 
-hourly_thu = thursday.groupby('hour')['Appliances'].mean()
+# Weekend (sobota=5, niedziela=6)
+weekend = df[df['weekday'].isin([5,6])]
+
+# Średnie godzinowe
+thu_hourly = thu.groupby('hour')['Appliances'].mean()
+weekend_hourly = weekend.groupby('hour')['Appliances'].mean()
 
 plt.figure(figsize=(10,5))
-hourly_thu.plot(kind='line', marker='o')
-plt.title("Średnie zużycie energii w czwartki (wg godziny)")
+plt.plot(thu_hourly.index, thu_hourly.values, marker='o', label='Czwartki')
+plt.plot(weekend_hourly.index, weekend_hourly.values, marker='o', label='Weekend')
+
+plt.title("Porównanie zużycia energii: czwartki vs weekend")
 plt.xlabel("Godzina")
-plt.ylabel("Wh")
+plt.ylabel("Średnie Wh")
+plt.legend()
 plt.grid(True)
+
 plt.tight_layout()
 plt.savefig("wykres2.png")
 plt.close()
