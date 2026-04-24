@@ -1,39 +1,34 @@
----
+# Sprawozdanie – Analiza zużycia energii w systemie IoT
 
-title: Sprawozdanie – Analiza zużycia energii w systemie IoT
-author: Julia Bąk 277647
-date: 24.04.2026
-geometry: margin=1.5cm
-header-includes:
-
-* \usepackage{caption}
-* \captionsetup[figure]{labelformat=empty}
+**Autor:** Julia Bąk 277647
+**Kurs:** Inżynieria testów i jakości
+**Data:** 24.04.2026
 
 ---
 
-# Kurs
-
-Inżynieria testów i jakości
-
-# Cel zadania
+## Cel zadania
 
 Celem zadania jest stworzenie wykresów opisujących działanie systemu IoT oraz analiza danych.
 
-# Analiza danych
+---
 
-## Wykres 1: Średnie zużycie energii wg dnia tygodnia
+## Analiza danych
+
+### Wykres 1: Średnie zużycie energii wg dnia tygodnia
 
 ![](wykres1.png)
 
-## Wykres 2: Porównanie zużycia energii – czwartki vs weekend
+### Wykres 2: Porównanie zużycia energii – czwartki vs weekend
 
 ![](wykres2.png)
 
-## Wykres 3: Średnie zużycie energii w ciągu dnia (wg godzin)
+### Wykres 3: Średnie zużycie energii w ciągu dnia (wg godzin)
 
 ![](wykres3.png)
 
-# Wnioski
+---
+
+## Wnioski
 
 Średnie zużycie energii wg dnia tygodnia pokazuje, że w każdym dniu zużycie energii jest różne, natomiast wartości te oscylują w niewielkich przedziałach. Widoczne jest większe zużycie podczas weekendu.
 
