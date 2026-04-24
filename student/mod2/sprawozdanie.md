@@ -1,68 +1,37 @@
-# Sprawozdanie – Analiza zużycia energii w systemie IoT
-
-## 1. Cel zadania
-
-Celem zadania była analiza danych pochodzących z systemu IoT monitorującego zużycie energii w domu oraz identyfikacja zależności i wzorców w danych.
-
 ---
 
-## 2. Opis danych
+title: "Sprawozdanie – Analiza zużycia energii w systemie IoT"
+author: "Julia Bąk 277647"
+date: "24.04.2026"
+geometry: margin=1.5cm
+----------------------
 
-Zbiór danych zawiera pomiary zużycia energii oraz parametrów środowiskowych, takich jak temperatura i wilgotność. Dane są zapisane w postaci szeregów czasowych.
+## Kurs
 
----
+Inżynieria testów i jakości
 
-## 3. Narzędzia
+## Cel zadania
 
-W analizie wykorzystano:
+Celem zadania jest stworzenie wykresów opisujących działanie systemu IoT oraz analiza danych.
 
-* język Python
-* bibliotekę Pandas (analiza danych)
-* Matplotlib i Seaborn (wizualizacja danych)
+## Analiza danych
 
----
-
-## 4. Analiza danych
-
-### 4.1 Średnie zużycie energii wg dnia tygodnia
+### Wykres 1: Średnie zużycie energii wg dnia tygodnia
 
 ![wykres1](wykres1.png)
 
-Wykres przedstawia średnie zużycie energii w zależności od dnia tygodnia.
-Można zauważyć różnice pomiędzy dniami roboczymi a weekendem, co wskazuje na wpływ aktywności domowników.
-
----
-
-### 4.2 Porównanie: czwartki vs weekend
+### Wykres 2: Porównanie zużycia energii – czwartki vs weekend
 
 ![wykres2](wykres2.png)
 
-Wykres pokazuje różnice w rozkładzie zużycia energii w ciągu dnia pomiędzy dniem roboczym (czwartek) a weekendem.
-W weekend zużycie jest bardziej rozłożone w czasie, co sugeruje większą obecność domowników w domu.
-
----
-
-### 4.3 Zużycie energii w ciągu dnia (wg godzin)
+### Wykres 3: Średnie zużycie energii w ciągu dnia (wg godzin)
 
 ![wykres3](wykres3.png)
 
-Wykres przedstawia średnie zużycie energii w zależności od godziny.
-Widoczne są wyraźne wzorce dobowe, w tym godziny zwiększonego zużycia.
+## Wnioski
 
----
+Średnie zużycie energii wg dnia tygodnia pokazuje, że w każdym dniu zużycie energii jest różne, natomiast wartości te oscylują w niewielkich przedziałach. Widoczne jest większe zużycie energii podczas weekendu.
 
-## 5. Wnioski
+Z drugiego wykresu można odczytać zwiększone zużycie energii w porze popołudniowej, utrzymujące się przez cały wieczór. W czwartek widoczny jest natomiast wyraźny wzrost zużycia energii w godzinach wieczornych.
 
-Na podstawie przeprowadzonej analizy można sformułować następujące wnioski:
-
-* Zużycie energii wykazuje wyraźne wzorce dobowe – największe wartości występują w godzinach aktywności domowników.
-* Występują różnice pomiędzy dniami roboczymi a weekendem, co wskazuje na wpływ stylu życia użytkowników.
-* Rozkład zużycia energii w weekend jest bardziej równomierny niż w dni robocze.
-* Dane mają potencjał do dalszej analizy oraz wykorzystania w modelach predykcyjnych.
-
----
-
-## 6. Podsumowanie
-
-Analiza danych IoT pozwoliła na identyfikację istotnych wzorców w zużyciu energii.
-Wizualizacja danych umożliwiła lepsze zrozumienie zachowań użytkowników oraz czynników wpływających na zużycie energii.
+Na trzecim wykresie widoczne są wyraźne skoki zużycia energii w godzinach porannych oraz wieczornych.
