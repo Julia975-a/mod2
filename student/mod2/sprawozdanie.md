@@ -6,31 +6,31 @@ date: "24.04.2026"
 geometry: margin=1.5cm
 ----------------------
 
-## Kurs
+# Kurs
 
 Inżynieria testów i jakości
 
-## Cel zadania
+# Cel zadania
 
 Celem zadania jest stworzenie wykresów opisujących działanie systemu IoT oraz analiza danych.
 
-## Analiza danych
+# Analiza danych
 
-### Wykres 1: Średnie zużycie energii wg dnia tygodnia
+## Wykres 1: Średnie zużycie energii wg dnia tygodnia
 
-![wykres1](wykres1.png)
+<img src="wykres1.png" width="600">
 
-### Wykres 2: Porównanie zużycia energii – czwartki vs weekend
+## Wykres 2: Porównanie zużycia energii – czwartki vs weekend
 
-![wykres2](wykres2.png)
+<img src="wykres2.png" width="600">
 
-### Wykres 3: Średnie zużycie energii w ciągu dnia (wg godzin)
+## Wykres 3: Średnie zużycie energii w ciągu dnia (wg godzin)
 
-![wykres3](wykres3.png)
+<img src="wykres3.png" width="600">
 
-## Wnioski
+# Wnioski
 
-Średnie zużycie energii wg dnia tygodnia pokazuje, że w każdym dniu zużycie energii jest różne, natomiast wartości te oscylują w niewielkich przedziałach. Widoczne jest większe zużycie energii podczas weekendu.
+Średnie zużycie energii wg dnia tygodnia pokazuje, że w każdym dniu zużycie energii jest różne, natomiast wartości te oscylują w niewielkich przedziałach. Widoczne jest większe zużycie podczas weekendu.
 
 Z drugiego wykresu można odczytać zwiększone zużycie energii w porze popołudniowej, utrzymujące się przez cały wieczór. W czwartek widoczny jest natomiast wyraźny wzrost zużycia energii w godzinach wieczornych.
 
