@@ -19,17 +19,20 @@ Celem zadania jest stworzenie wykresów opisujących działanie systemu IoT oraz
 ## Analiza danych
 
 <p align="center">
-<img src="wykres1.png" width="600"><br>
+![](wykres1.png)
+<br>
 Wykres 1: Średnie zużycie energii wg dnia tygodnia
 </p>
 
 <p align="center">
-<img src="wykres2.png" width="600"><br>
+![](wykres2.png)
+<br>
 Wykres 2: Porównanie zużycia energii – czwartki vs weekend
 </p>
 
 <p align="center">
-<img src="wykres3.png" width="600"><br>
+![](wykres3.png)
+<br>
 Wykres 3: Średnie zużycie energii w ciągu dnia (wg godzin)
 </p>
 
